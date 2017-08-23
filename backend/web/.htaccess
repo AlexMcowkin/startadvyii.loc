@@ -1,0 +1,28 @@
+AddDefaultCharset UTF-8
+
+Options -Indexes 
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule . index.php
+
+<If "%{REMOTE_ADDR} == '127.0.0.1'">
+	#AuthType Basic
+	#AuthName "What do you want?"
+	#AuthUserFile D:\openserver524\domains\freelance.loc\backend\web\.htpasswd
+	#Require valid-user
+</If>
+
+<If "%{REMOTE_ADDR} == '95.85.31.53'">
+	AuthUserFile /home/proger/web/freelance.md/public_html/backend/web/.htpasswd
+</If>
+	
+
+
+#prevent access to .htpasswd
+<Files .htpasswd>
+   deny from all
+</Files>

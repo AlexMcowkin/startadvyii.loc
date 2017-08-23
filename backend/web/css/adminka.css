@@ -1,0 +1,52 @@
+/*-----login form-----*/
+#login-form .form-group {
+  margin-bottom: 15px;
+}
+
+.signin .forgot
+{
+	margin: 1px 0 20px;
+	float: right;
+}
+
+/*-----table-----*/
+.table > thead:first-child > tr:first-child > th,
+.table > thead > tr.success > th a {color:#fff !important;}
+.table > thead > tr.success > th a:hover {color:#ccc !important;}
+
+.table td.actions-buttons a {color: #657390;}
+.table td.actions-buttons a:hover, .table td.actions-buttons a:focus {color: #9fa8bc;}
+
+.th-vert-align {vertical-align: middle !important;}
+
+.nav-quirk .nav-parent {cursor: pointer;}
+
+/*-----noscript and old browser-----*/
+noscript, .chromeframe
+{
+	position: fixed;
+	display: block;
+	height: 75px;
+	width: 100%;
+	top: 0px;
+	left:0px;
+	text-align: center;
+	font-size: 30px;
+	color:#fff;
+	background: #a105ff;
+	z-index: 99999;
+	font-family: Open Sans,Helvetica Neue,sans-serif;
+}
+noscript a, .chromeframe a {color: #000; text-decoration: underline;}
+
+/*-----sorting list-----*/
+.dd-list-wait {display: none;}
+.save-msg, .error-msg {display: none;}
+.ball-pulse {width: 100px;margin: 10px auto;}
+.ball-pulse > div {
+ 	background: #505b72;
+}
+
+.headerpanel .logopanel h2 > a {
+	font-family: 'Baloo Bhaina', cursive;
+}

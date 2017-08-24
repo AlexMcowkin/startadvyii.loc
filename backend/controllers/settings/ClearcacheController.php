@@ -1,5 +1,5 @@
 <?php
-namespace backend\controllers;
+namespace backend\controllers\settings;
 
 use Yii;
 use yii\helpers\Url;

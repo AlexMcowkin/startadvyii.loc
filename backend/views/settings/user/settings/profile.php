@@ -33,25 +33,21 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?=$form->field($model, 'name', [
                     'template' => '<div class="input-group mb20"><span class="input-group-addon"><i class="fa fa-user"></i></span>{input}</div>',
-                ]);?>
-                
+                ])->textInput(['placeholder'=>Yii::t('user', 'Name')]);?>
+
                 <?=$form->field($model, 'public_email', [
-                    'template' => '<div class="input-group mb20"><span class="input-group-addon"><i class="fa fa-envelope"></i></span>{input}</div>',
-                ]);?>
-
-                <?=$form->field($model, 'website', [
-                    'template' => '<div class="input-group mb20"><span class="input-group-addon"><i class="fa fa-at"></i></span>{input}</div>',
-                ]);?>   
-
+                    'template' => '<div class="input-group mb20"><span class="input-group-addon"><i class="fa fa-user"></i></span>{input}</div>',
+                ])->textInput(['placeholder'=>Yii::t('user', 'Email'), 'type'=>'email']);?>
+                
                 <?=$form->field($model, 'skype', [
                     'template' => '<div class="input-group mb20"><span class="input-group-addon"><i class="fa fa-skype"></i></span>{input}</div>',
-                ]);?>
+                ])->textInput(['placeholder'=>'Skype']);?>
 
                 <?=$form->field($model, 'phone', [
                     'template' => '<div class="input-group mb20"><span class="input-group-addon"><i class="fa fa-phone"></i></span>{input}</div>',
-                ]);?>
+                ])->textInput(['placeholder'=>'Phone']);?>
 
-                <?=$form->field($model, 'avatar', [
+                <?=$form->field($model, 'avatar_file', [
                     'template' => '<div class="input-group mb20"><span class="input-group-addon"><i class="fa fa-picture-o"></i></span>{input}</div>',
                 ])->widget(FileInput::classname(), [
                     'options' => ['accept' => 'image/*', 'multiple' => false],

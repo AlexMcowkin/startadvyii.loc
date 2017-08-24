@@ -6,16 +6,6 @@ $params = array_merge(
     require(__DIR__ . '/params-local.php')
 );
 
-switch($_SERVER["HTTP_HOST"])
-{
-    case 'startadvyii.loc':
-        $_url = 'http://startadvyii.loc';
-        break;
-    default:
-        $_url = 'http://www.startadvyii.md';
-        break;
-}
-
 return [
     'id' => 'app-console',
     'basePath' => dirname(__DIR__),
@@ -31,8 +21,8 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'scriptUrl' => $_url,
-            'baseUrl' => $_url,
+            'scriptUrl' => $params['frontendHomeUrl'],
+            'baseUrl' => $params['frontendHomeUrl'],
         ],
         'view' => [
             'class' => 'yii\web\View',

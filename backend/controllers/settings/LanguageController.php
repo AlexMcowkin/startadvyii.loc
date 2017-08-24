@@ -1,8 +1,8 @@
 <?php
-namespace backend\controllers;
+namespace backend\controllers\settings;
 
 use Yii;
-use backend\models\Language;
+use backend\models\settings\Language;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;

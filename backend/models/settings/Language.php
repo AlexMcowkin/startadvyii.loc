@@ -1,5 +1,5 @@
 <?php
-namespace backend\models;
+namespace backend\models\settings;
 
 use Yii;
 

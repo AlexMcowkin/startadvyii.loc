@@ -2,7 +2,7 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\CommondataMeta;
+use backend\models\CommondataMeta;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;

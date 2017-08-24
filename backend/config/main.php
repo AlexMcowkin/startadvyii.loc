@@ -7,9 +7,9 @@ $params = array_merge(
 );
 
 return [
-    'language' => 'ru-RU',
-    'sourceLanguage' => 'ru-RU',
-    'timeZone' => 'Europe/Chisinau',
+    'language' => $params['siteLanguage'],
+    'sourceLanguage' => $params['sourceLanguage'],
+    'timeZone' => $params['timeZone'],
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
@@ -18,6 +18,7 @@ return [
         'admin' => [
             'layout' => '@app/views/layouts/content/content_full',
         ],
+        'rbac' => 'dektrium\rbac\RbacWebModule',
         'user' => [
             'class' => 'dektrium\user\Module',
             'admins' => ['adminer'],
@@ -34,7 +35,11 @@ return [
                     'class' => 'dektrium\user\controllers\RegistrationController',
                     'layout' => '@app/views/layouts/loginout',
                 ],
-                'settings' => 'backend\controllers\user\SettingsController',
+                'settings' => 'backend\controllers\settings\user\SettingsController',
+                'admin' => [
+                    'class' => 'dektrium\user\controllers\AdminController',
+                    'layout' => '@app/views/layouts/content/content_full',
+                ],
             ],
             // http://adminka.SITENAME.loc/user/registration/resend
             // http://adminka.SITENAME.loc/user/confirm/1/RxJhMid-OVoQHOQOvYkD_9XOVOFY2g9R
@@ -43,7 +48,7 @@ return [
             'confirmWithin' => 21600,
             'cost' => 12,
             'modelMap' => [
-                'Profile' => 'backend\models\user\Profile',
+                'Profile' => 'backend\models\settings\user\Profile',
             ],
         ],
         'backup' => [
@@ -69,12 +74,13 @@ return [
         'view' => [
             'theme' => [
                 'pathMap' => [
-                    '@dektrium/user/views' => '@app/views/user',
-                    '@vendor/mdmsoft/yii2-admin/views/assignment'=>'@app/views/admin/assignment',
-                    '@vendor/mdmsoft/yii2-admin/views/route'=>'@app/views/admin/route',
-                    '@vendor/mdmsoft/yii2-admin/views/item'=>'@app/views/admin/item',
-                    '@vendor/spanjeta/yii2-backup/views/default' => '@app/views/backup',
-                    '@vendor/c006/yii2-migration-utility/views/default' => '@app/views/migration',
+                    '@dektrium/user/views' => '@app/views/settings/user',
+                    '@vendor/mdmsoft/yii2-admin/views/assignment'=>'@app/views/settings/admin/assignment',
+                    '@vendor/mdmsoft/yii2-admin/views/route'=>'@app/views/settings/admin/route',
+                    '@vendor/mdmsoft/yii2-admin/views/item'=>'@app/views/settings/admin/item',
+                    '@vendor/spanjeta/yii2-backup/views/default' => '@app/views/settings/backup',
+                    '@vendor/c006/yii2-migration-utility/views/default' => '@app/views/settings/migration',
+                    '@dektrium/rbac/widgets/views' => '@app/views/settings/user/rbac/widgets',
                 ],
             ],
         ],
@@ -111,6 +117,7 @@ return [
                 'profile' => 'user/settings/profile',
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
                  // ['pattern' => 'elastic_add_index', 'route' => 'elaticindex/addindex', 'suffix' => '.php'],
             ],

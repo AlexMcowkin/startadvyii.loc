@@ -29,10 +29,8 @@ $this->params['breadcrumbs'][] = $this->title;
     'module' => Yii::$app->getModule('user'),
 ]) ?>
 
-<?= $this->render('_menu') ?>
-
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-2">
         <div class="panel panel-default">
             <div class="panel-body">
                 <?= Nav::widget([
@@ -42,54 +40,55 @@ $this->params['breadcrumbs'][] = $this->title;
                     'items' => [
                         [
                             'label' => Yii::t('user', 'Account details'),
-                            'url' => ['/user/admin/update', 'id' => $user->id]
+                            'url' => ['/user/admin/update', 'id' => $user->id],
+                            'linkOptions' => [
+                                'class' => 'btn btn-info btn-quirk',
+                            ],
                         ],
                         [
-                            'label' => Yii::t('user', 'Profile details'),
-                            'url' => ['/user/admin/update-profile', 'id' => $user->id]
-                        ],
-                        ['label' => Yii::t('user', 'Information'), 'url' => ['/user/admin/info', 'id' => $user->id]],
-                        [
-                            'label' => Yii::t('user', 'Assignments'),
+                            'label' => Yii::t('adminka', 'TTL_LEFT_SUBMENU_ASSIG'),
                             'url' => ['/user/admin/assignments', 'id' => $user->id],
                             'visible' => isset(Yii::$app->extensions['dektrium/yii2-rbac']),
+                            'linkOptions' => [
+                                'class' => 'btn btn-info btn-quirk',
+                            ],
                         ],
                         '<hr>',
                         [
                             'label' => Yii::t('user', 'Confirm'),
-                            'url'   => ['/user/admin/confirm', 'id' => $user->id],
+                            'url' => ['/user/admin/confirm', 'id' => $user->id],
                             'visible' => !$user->isConfirmed,
                             'linkOptions' => [
-                                'class' => 'text-success',
+                                'class' => 'btn btn-success btn-quirk',
                                 'data-method' => 'post',
                                 'data-confirm' => Yii::t('user', 'Are you sure you want to confirm this user?'),
                             ],
                         ],
                         [
                             'label' => Yii::t('user', 'Block'),
-                            'url'   => ['/user/admin/block', 'id' => $user->id],
+                            'url' => ['/user/admin/block', 'id' => $user->id],
                             'visible' => !$user->isBlocked,
                             'linkOptions' => [
-                                'class' => 'text-danger',
+                                'class' => 'btn btn-danger btn-quirk',
                                 'data-method' => 'post',
                                 'data-confirm' => Yii::t('user', 'Are you sure you want to block this user?'),
                             ],
                         ],
                         [
                             'label' => Yii::t('user', 'Unblock'),
-                            'url'   => ['/user/admin/block', 'id' => $user->id],
+                            'url' => ['/user/admin/block', 'id' => $user->id],
                             'visible' => $user->isBlocked,
                             'linkOptions' => [
-                                'class' => 'text-success',
+                                'class' => 'btn btn-success btn-quirk',
                                 'data-method' => 'post',
                                 'data-confirm' => Yii::t('user', 'Are you sure you want to unblock this user?'),
                             ],
                         ],
                         [
                             'label' => Yii::t('user', 'Delete'),
-                            'url'   => ['/user/admin/delete', 'id' => $user->id],
+                            'url' => ['/user/admin/delete', 'id' => $user->id],
                             'linkOptions' => [
-                                'class' => 'text-danger',
+                                'class' => 'btn btn-danger btn-quirk',
                                 'data-method' => 'post',
                                 'data-confirm' => Yii::t('user', 'Are you sure you want to delete this user?'),
                             ],
@@ -99,7 +98,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-10">
         <div class="panel panel-default">
             <div class="panel-body">
                 <?= $content ?>

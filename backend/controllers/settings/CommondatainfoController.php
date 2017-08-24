@@ -1,8 +1,8 @@
 <?php
-namespace backend\controllers;
+namespace backend\controllers\settings;
 
 use Yii;
-use common\models\CommondataInfo;
+use backend\models\settings\CommondataInfo;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;

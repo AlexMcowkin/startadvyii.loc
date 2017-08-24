@@ -96,6 +96,10 @@ return [
     'MUST_DEFAULT_LANG' => 'Хотя бы один язык должен быть "по умолчанию"',
     'VAL_DELETED' => 'Запись была удалена',
     'DONOT_REPEAT' => 'Значение не должно повторяться',
+
+    // dektrium rbac
+    'ALERT_ASSIGNMENTS_UPDATED' => 'Привилегии назначены',
+    'SELECT_ASSIGNMENTS' => 'Выберите привилегии',
 ];
 /*
 Yii::t('adminka/models', '')

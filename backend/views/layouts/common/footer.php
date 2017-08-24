@@ -18,6 +18,10 @@ $(function() {
   // $("#select5").select2({ minimumResultsForSearch: Infinity });
   // $("#select6").select2({ tags: true });
 
+  $('#select-ns').select2({
+    minimumResultsForSearch: Infinity
+  });
+
   // Toggles
   $('.toggle').toggles({
     on: true,

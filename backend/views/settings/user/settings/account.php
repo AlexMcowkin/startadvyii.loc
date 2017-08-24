@@ -31,12 +31,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]); ?>
 
                 <?=$form->field($model, 'username', [
-                    'template' => '<div class="input-group mb20"><span class="input-group-addon"><i class="fa fa-user"></i></span>{input}</div>',
-                ]);?>
+                    'template' => '<div class="input-group mb20"><span class="input-group-addon"><i class="fa fa-user-plus"></i></span>{input}</div>',
+                ])->textInput(['placeholder'=>Yii::t('user', 'Username')]);?>
 
                 <?=$form->field($model, 'email', [
                     'template' => '<div class="input-group mb20"><span class="input-group-addon"><i class="fa fa-envelope"></i></span>{input}</div>',
-                ]);?>
+                ])->textInput(['placeholder'=>Yii::t('user', 'Email'), 'type'=>'email']);?>
 
                 <?=$form->field($model, 'current_password', [
                     'template' => '<div class="input-group mb20"><span class="input-group-addon"><i class="fa fa-key"></i></span>{input}</div>{error}{hint}',

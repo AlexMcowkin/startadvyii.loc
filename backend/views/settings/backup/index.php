@@ -74,11 +74,12 @@ $this->params['breadcrumbs'][] = $this->title;
 			                                return Html::a('<i class="fa fa-trash fa-lg" ></i>', $url, ['data-method'=>'post', 'class'=>'deleterecord', 'data-confirm' => Yii::t('adminka', 'GV_DELETE_2'),]);
 			                            },
 			                        ],
-			                        'urlCreator' => function ($action, $model, $key, $index){
-										if ($action === 'delete'){
-											$url = Url::toRoute(['default/delete','id'=>$model['id']]);
-											return $url;
-										}
+									'urlCreator' => function ($action, $model, $key, $index) {
+										$url = Url::toRoute([ 
+											'default/' .$action,
+											'file' => $model ['name'] 
+										]);
+										return $url;
 									}
 			                    ],
 						],

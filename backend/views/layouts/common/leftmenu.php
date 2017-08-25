@@ -1,6 +1,5 @@
 <?php
 use yii\helpers\Html;
-$_userRole = array_shift(Yii::$app->authManager->getRolesByUser(Yii::$app->user->identity->id));
 ?>
 <div class="leftpanel">
   <div class="leftpanelinner">
@@ -19,7 +18,6 @@ $_userRole = array_shift(Yii::$app->authManager->getRolesByUser(Yii::$app->user-
       </div>
       <div class="media-body">
         <h4 class="media-heading"><?=Yii::$app->user->identity->username;?></h4>
-        <span><?=$_userRole->name;?></span>
       </div>
     </div>
 

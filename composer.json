@@ -26,8 +26,12 @@
         "2amigos/yii2-transliterator-helper": "*",
         "spanjeta/yii2-backup": "*",
         "c006/yii2-migration-utility": "dev-master",
-        "kartik-v/yii2-widget-fileinput": "@dev",
-        "unclead/yii2-multiple-input": "~2.0"
+        "kartik-v/yii2-widgets": "*",
+        "unclead/yii2-multiple-input": "~2.0",
+        "asofter/yii2-imperavi-redactor": "*",
+        "mihaildev/yii2-elfinder": "*",
+        "mihaildev/yii2-ckeditor": "*",
+        "nemmo/yii2-attachments": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

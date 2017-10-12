@@ -64,7 +64,7 @@ return [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.gmail.com',
                 'username' => 'scorpiolaboratory@gmail.com',
-                'password' => 'san4oscorpiolab85',
+                'password' => '***',
                 'port' => '587',
                 'encryption' => 'tls',
             ],
